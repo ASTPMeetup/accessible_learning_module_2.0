@@ -1,0 +1,205 @@
+
+/* canvas styles */
+html, body
+{
+	background: #00004d;
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 400;
+	color: #333333;
+}
+
+body
+{
+	font-size:0.8em;
+}
+
+h2 {
+	color: white;
+}
+
+/* draggable targets */
+[data-draggable="target"]
+{
+	color: #fff;
+	min-height: 250px;
+}
+
+/* drop target state */
+[data-draggable="target"][aria-dropeffect="move"]
+{
+	/*background:#fff;*/
+}
+
+/* drop target focus and dragover state */
+[data-draggable="target"][aria-dropeffect="move"]:focus,
+[data-draggable="target"][aria-dropeffect="move"].dragover
+{
+	outline:none;
+	box-shadow: none;
+	min-height: 250px;
+}
+
+/* draggable items */
+[data-draggable="item"]
+{
+	width: 85%;
+	font-size: 1.2em;
+  font-weight: 700;
+	margin-bottom: 10px;
+	text-align: center;
+	position: relative;
+	list-style-type: none;
+	font-family: Lato, sans-serif;
+	color: #fff;
+	padding: 10px;
+	box-shadow: 0 4px 8px 0 #000, 0 6px 20px 0 #000;
+	border-radius: 5px;
+}
+
+/* items focus state */
+[data-draggable="item"]:focus
+{
+	outline:none;
+	/*box-shadow:0 0 0 4px #68b, inset 0 0 0 1px #ddd;*/
+	opacity: 0.7;
+}
+
+/* items grabbed state */
+[data-draggable="item"][aria-grabbed="true"]
+{
+	opacity: 0.4;
+	margin-left: 10px;
+}
+
+#progressBar {
+	border-color: #fff;
+	margin-left: 15px;
+}
+/*overriding default jquery ui css values for progress bar*/
+.ui-progressbar-value {
+	background-color: green !important;
+	opacity: 0.5;
+	font-size: 12px;
+	font-weight: normal !important;
+	text-align: center;
+	color: white !important;
+	line-height: 28px !important;
+	border: none !important;
+	width: 100%;
+	transition: width 0.5s;
+	-webkit-transition: width 0.5s;
+}
+#grading {
+	display: none;
+	padding-left: 40px !important;
+	padding-top: 10px !important;
+	bottom: 0px !important;
+	left: 0px !important;
+  width: 100% !important;
+  position: fixed !important;
+	background: #fff;
+	color: #595959;
+	opacity: 0.8;
+}
+
+.previewDrop {
+	/*opacity: 0.9;*/
+	width: 85%;
+	height: 44px;
+	margin-bottom: 10px;
+	text-align: center;
+	position: relative;
+	list-style-type: none;
+	font-family: Lato, sans-serif;
+	color: #4d4d4d;
+	padding: 10px 20px;
+	font-weight: normal;
+}
+#app {
+	margin-top: 30px;
+}
+
+#container1 {
+	padding-top: 50px;
+}
+
+#container2 {
+	min-height: 500px;
+	padding-top: 50px;
+}
+
+.instructionsLi {
+	list-style: none;
+	font-size: 1.7em;
+	padding: 10px;
+	font-weight: 100;
+}
+
+#keyboardInstruc {
+	padding: 50px;
+	background: white;
+	color: #000;
+	float: left;
+	/*margin-left: 0px;*/
+	/*text-align: center;*/
+}
+
+#header {
+	padding: 30px;
+	font-weight: 300;
+	font-size: 4em;
+	background: white;
+	top: 0;
+	left: 0;
+	margin: 0 auto;
+
+	/*font: 300 20px/1.5 Lato, "Helvetica Neue", Helvetica, arial, sans-serif;*/
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+#accessibleImg {
+	height: 720px;
+	width: 450px;
+	float: right;
+}
+
+#instructions {
+	color: black;
+	padding-bottom: 50px;
+	top: 0;
+	left: 0;
+	width: 100% !important;
+	min-height: 300px;
+	position: relative;
+	overflow:auto;
+	z-index: 100;
+	background: #fff;
+	margin-top: -30px;
+}
+
+#gradeHeader {
+	margin-left: 15px;
+}
+
+#popup {
+	text-align: center;
+	padding-bottom: : 0px;
+	top: 1em;
+	cursor: default;
+	z-index: 40;
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 300;
+	font-style: italic;
+
+}
+
+.dropdown {
+	opacity: 0.9;
+	width: 8%;
+	font-weight: 800;
+	float: right;
+}
