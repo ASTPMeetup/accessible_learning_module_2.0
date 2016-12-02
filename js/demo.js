@@ -30,6 +30,7 @@
 	{
 		items[i].setAttribute('draggable', 'true');
 		items[i].setAttribute('aria-grabbed', 'false');
+		items[i].setAttribute('aria-selected', 'false');
 		items[i].setAttribute('tabindex', '0');
 	}
 
@@ -65,6 +66,7 @@
 
 		//set this item's grabbed state
 		item.setAttribute('aria-grabbed', 'true');
+		item.setAttribute('aria-selected', 'true');
 
 		//add it to the items array
 		selections.items.push(item);
@@ -75,6 +77,7 @@
 	{
 		//reset this item's grabbed state
 		item.setAttribute('aria-grabbed', 'false');
+		item.setAttribute('aria-selected', 'false');
 
 		//then find and remove this item from the existing items array
 		for(var len = selections.items.length, i = 0; i < len; i ++)
@@ -100,14 +103,13 @@
 			for(var len = selections.items.length, i = 0; i < len; i ++)
 			{
 				selections.items[i].setAttribute('aria-grabbed', 'false');
+				selections.items[i].setAttribute('aria-selected', 'false');
 			}
 
 			//then reset the items array
 			selections.items = [];
 		}
-		$('.previewDrop').remove();
 		incrementProgress();
-
 	}
 
 	//shorctut function for testing whether a selection modifier is pressed
@@ -146,10 +148,10 @@
 			)
 			{
 				items[i].removeAttribute('aria-grabbed');
+				items[i].removeAttribute('aria-selected');
 				items[i].removeAttribute('tabindex');
 			}
 		}
-
 	}
 
 	//function for removing dropeffect from the target containers
@@ -165,9 +167,6 @@
 				{
 					targets[i].setAttribute('aria-dropeffect', 'none');
 					targets[i].removeAttribute('tabindex');
-					// targets[i].removeChild(targets[i].lastChild);
-					$('.previewDrop').remove();
-					incrementProgress();
 				}
 			}
 
@@ -178,6 +177,7 @@
 				if(!items[i].getAttribute('aria-grabbed'))
 				{
 					items[i].setAttribute('aria-grabbed', 'false');
+					items[i].setAttribute('aria-selected', 'false');
 					items[i].setAttribute('tabindex', '0');
 				}
 				else if(items[i].getAttribute('aria-grabbed') == 'true')
@@ -203,17 +203,6 @@
 		return null;
 	}
 
-	function previewDrop(droptarget) {
-		$('.previewDrop').remove();
-		$('[aria-grabbed="true"]').each(function(){
-			var previewDropEffect = document.createElement('li');
-			previewDropEffect.setAttribute('data-draggable', 'item');
-			previewDropEffect.appendChild(document.createTextNode($(this).text().slice(0, $(this).text().length-1)));
-			previewDropEffect.className += 'previewDrop';
-			droptarget.appendChild(previewDropEffect);
-		});
-	}
-
 
 
 	//mousedown event to implement single selection
@@ -224,7 +213,6 @@
 		{
 			//clear dropeffect from the target containers
 			clearDropeffects();
-			incrementProgress();
 
 			//if the multiple selection modifier is not pressed
 			//and the item's grabbed state is currently false
@@ -249,7 +237,6 @@
 		{
 			//clear dropeffect from the target containers
 			clearDropeffects();
-			incrementProgress();
 
 			//clear all existing selections
 			clearSelections();
@@ -260,7 +247,6 @@
 		{
 			//clear dropeffect from the target containers
 			clearDropeffects();
-			incrementProgress();
 		}
 
 	}, false);
@@ -335,7 +321,6 @@
 	//keydown event to implement selection and abort
 	document.addEventListener('keydown', function(e)
 	{
-		$('.previewDrop').remove();
 		//if the element is a grabbable item
 		if(e.target.getAttribute('aria-grabbed'))
 		{
@@ -354,7 +339,6 @@
 						if(selections.items.length == 1)
 						{
 							clearDropeffects();
-							incrementProgress();
 						}
 
 						//unselect this item
@@ -393,7 +377,6 @@
 				{
 					//clear dropeffect from the target containers
 					clearDropeffects();
-					incrementProgress();
 
 					//clear all existing selections
 					clearSelections();
@@ -459,7 +442,6 @@
 			{
 				//clear dropeffect from the target containers
 				clearDropeffects();
-				incrementProgress();
 
 				//then set focus back on the last item that was selected, which is
 				//necessary because we've removed tabindex from the current focus
@@ -473,12 +455,6 @@
 		}
 
 	}, false);
-
-	document.addEventListener('keyup', function(e){
-		if(e.target.getAttribute('data-list')){
-			previewDrop(document.querySelectorAll('ul[aria-dropeffect="move"]:focus')[0]);
-		}
-	});
 
 
 
@@ -514,14 +490,12 @@
 			{
 				selections.droptarget.className =
 					selections.droptarget.className.replace(/ dragover/g, '');
-					selections.droptarget.removeChild(selections.droptarget.lastChild);
 			}
 
 			//apply the dragover class to the new drop target reference
 			if(droptarget)
 			{
 				droptarget.className += ' dragover';
-				previewDrop(droptarget);
 			}
 
 			//then save that reference for next time
@@ -566,7 +540,6 @@
 		{
 			//clear dropeffect from the target containers
 			clearDropeffects();
-			incrementProgress();
 
 			//if we have a valid drop target reference
 			if(selections.droptarget)
@@ -582,7 +555,6 @@
 				selections.droptarget = null;
 			}
 		}
-		incrementProgress();
 
 	}, false);
 
@@ -594,7 +566,6 @@
 		//if the element is a drop target container
 		if(e.target.getAttribute('aria-dropeffect'))
 		{
-
 			//Enter or Modifier + M is the drop keystroke
 			if(e.keyCode == 13 || (e.keyCode == 77 && hasModifier(e)))
 			{
@@ -606,7 +577,6 @@
 
 				//clear dropeffect from the target containers
 				clearDropeffects();
-				incrementProgress();
 
 				//then set focus back on the last item that was selected, which is
 				//necessary because we've removed tabindex from the current focus

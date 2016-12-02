@@ -5,9 +5,12 @@ var maxGrade = 100;
 var grade = 0;
 var dragCollection = $('[data-draggable="item"]');
 var totalDraggables = dragCollection.length;
-var objDescriptions = ['This is a description for line item 0', 'This is a description for line item 2',
-                       'This is a description for line item 3', 'This is a description for line item 4',
-                       'This is a description for line item 5', 'This is a description for line item 6'];
+var objDescriptions = ['The only president to be a licensed bartender.',
+                       'This place is super real and has some super interesting history.',
+                       '1700s English Poet who kept a pet bear in his college dorm room.',
+                       'This man challenged George Washington to a breakdance competition.',
+                       'He had servants called the “Grooms of Stool” whose job it was to wipe his bottom.',
+                       'He was a huge fan of Star Trek.'];
 
 $('#progressBar').progressbar({
 		value: grade,
@@ -38,7 +41,7 @@ function incrementProgress(){
 
   grade = Math.floor(grade);
 
-	// checkForCompletion(grade);
+	checkForCompletion(grade);
 
 	$('.ui-progressbar-value').html(grade + '%');
 
@@ -53,6 +56,7 @@ function incrementProgress(){
 }
 
 $('[data-draggable="item"]').keydown(function(e){
+  console.log($(this).text());
   if (e.keyCode == 40) {
     initializePopup($(this));
   }
@@ -80,14 +84,16 @@ function initializePopup(dragObject) {
   // Set ARIA properties
   var descriptionIndex = dragObject.attr('data-description-id');
   // Build description popup
-  var objDescription = $('<dt></dt>');
+  var objDescription = $('<li></li>');
   objDescription.attr('id', 'popup');
   objDescription.attr('aria-label', 'object description');
   objDescription.attr('role', 'tooltip');
+  objDescription.attr('tabindex', '1');
+  objDescription.focus();
   objDescription.text(objDescriptions[descriptionIndex]);
   objDescription.prepend($('<hr>').css('margin', '10px'));
   dragObject.append(objDescription);
-  // dragObject.removeAttr('tabindex');
+
   dragObject.children().one('click', function(){ removePopup(dragObject); });
   dragObject.attr('aria-owns', 'popup');
 }
@@ -105,13 +111,9 @@ for (var i = 0; i < totalDraggables; i++) {
   dragCollection[i].style.background = colorCollection[i];
   dragCollection[i].setAttribute('aria-haspopup', 'true');
 }
-// function checkForCompletion(grade) {
-// 	if (grade === maxGrade) {
-// 		// disable drag and drop and declare assignment completion
-// 		$('[data-draggable="item"]').css({ "background-color": "#ccc" });
-// 		$('[data-draggable="item"]').each(function(){
-// 			this.onkeydown = null;
-// 			this.setAttribute('aria-label', 'This line item is correct. You have completed this assignment!');
-// 		});
-// 	}
-//
+
+function checkForCompletion(grade) {
+	if (grade === maxGrade) {
+		$('[data-draggable="item"]').css({ "opacity" : "0.4" });
+	}
+}
