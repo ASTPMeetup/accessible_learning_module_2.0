@@ -165,15 +165,7 @@ li.static {
 	transition: width 0.5s;
 	-webkit-transition: width 0.5s;
 }
-/*#grading {
-	display: none;
-	margin-top: 50px;
-	margin-left: 50px;
-	padding-left: 20px;
-	bottom: 20px !important;
-  width: 92% !important;
-  position: absolute !important;
-}*/
+
 .pendingEffect {
   opacity: 0.5;
 }

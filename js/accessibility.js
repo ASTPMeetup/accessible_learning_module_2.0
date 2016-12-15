@@ -71,10 +71,10 @@ $('.dropdown').one("click", function(){
 
 $(document).scroll(function() {
   var y = $(this).scrollTop();
-  if (y > 865) {
-    $('#grading').fadeIn();
+  if (y > 825) {
+    $('#grading').fadeIn("slow");
   } else {
-    $('#grading').fadeOut();
+    $('#grading').fadeOut("show");
   }
 });
 

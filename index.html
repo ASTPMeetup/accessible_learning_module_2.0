@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 
 	<meta charset="utf-8" />
 
-	<title>Demo 4B: Keyboard Dropping</title>
+	<title>Accessible Drag &#38; Drop</title>
 
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 	<link rel="stylesheet" href="css/accessibility_bootstrap.css" type="text/css" />
@@ -13,30 +13,30 @@
 </head>
 <body>
 	<div class="col-lg-12" id="instructions">
-		<h1 id="header">Accessibile Learning Module</h1>
+		<h1 id="header" aria-labelledby="heading">Accessibile Learning Module</h1>
 		<br>
 		<div>
 			<div class="col-lg-6">
-				<img src="img/accessible_computer.jpg" alt="accessible computer image" id="accessibleImg">
+				<img src="img/accessible_computer.jpg" alt="accessible computer image" id="accessibleImg" role="presentation">
 			</div>
-			<div id="keyboardInstruc" class="container col-lg-6">
-				<h1>Key Board Instructions</h1>
+			<section id="keyboardInstruc" class="container col-lg-6" role="listbox" alt="accessibility instructions">
+				<h1 role="listhead">Key Board Instructions</h1>
 				<hr>
-				<li class="instructionsLi">Use <code>Tab</code> to move through the list of items below.</li>
-				<li class="instructionsLi">Select the item you want to move with the <code>Spacebar</code>.</li>
-				<li class="instructionsLi">Press <code>Shift + Spacebar</code> to select additional items.</li>
+				<li class="instructionsLi" role="listitem">Use <code>Tab</code> to move through the list of items below.</li>
+				<li class="instructionsLi" role="listitem">Select the item you want to move with the <code>Spacebar</code>.</li>
+				<li class="instructionsLi" role="listitem">Press <code>Shift + Spacebar</code> to select additional items.</li>
 				<li class="instructionsLi">Press <code>Enter</code> to drop the item on a target list.</li>
-				<li class="instructionsLi">Press <code>Esc</code> to unselect an item.</li>
-				<li class="instructionsLi">Use the <code>Down</code> &#38; <code>Up</code> keys to toggle popup.</li>
+				<li class="instructionsLi" role="listitem">Press <code>Esc</code> to unselect an item.</li>
+				<li class="instructionsLi" role="listitem">Use the <code>Down</code> &#38; <code>Up</code> keys to toggle popup.</li>
 				<br>
-				<a href="https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en" role="presentation" class="btn btn-default" id="download" target="_blank">Preview with ChromeVox</a>
-			</div>
+				<a href="https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en" class="btn btn-default" id="download" target="_blank" role="presentation"  aria-hidden="true" alt="preview with chromevox download">Preview with ChromeVox</a>
+			</section>
 		</div>
 	</div>
-	<div id="app">
+	<main id="app" role="main">
 	<div class="col-lg-12" id="container1">
-		<div aria-live="polite">
-    <!--ADDED: role="listbox" aria-label="List of Hemi's Habits" -->
+		<section aria-live="polite">
+    <!--ADDED: role="listbox" aria-label="Place and People" -->
 
 		<ol data-draggable="target" role="listbox" aria-label="Places and People" class="col-lg-6" data-list="start">
 		      <!--ADDED: role="listhead" -->
@@ -48,39 +48,38 @@
 			<li data-draggable="item" role="listitem" data-category="c" data-description-id="1">Mount Place McPlace<span class="dropdown" aria-hidden="true">+</span></li>
 			<li data-draggable="item" role="listitem" data-category="a" data-description-id="2">Lord Byron<span class="dropdown" aria-hidden="true">+</span></li>
 			<li data-draggable="item" role="listitem" data-category="c" data-description-id="3">Joseph McJosephian<span class="dropdown" aria-hidden="true">+</span></li>
-      <li data-draggable="item" role="listitem" data-category="a" data-description-id="4">Henry VIII of England<span class="dropdown" aria-hidden="true">+</span></li>
-      <li data-draggable="item" role="listitem" data-category="a" data-description-id="5">Martin Luther King Jr<span class="dropdown" aria-hidden="true">+</span></li>
+		    <li data-draggable="item" role="listitem" data-category="a" data-description-id="4">Henry VIII of England<span class="dropdown" aria-hidden="true">+</span></li>
+		    <li data-draggable="item" role="listitem" data-category="a" data-description-id="5">Martin Luther King Jr<span class="dropdown" aria-hidden="true">+</span></li>
 		</ol>
-		</div>
+	  </section>
 
-	  <div aria-live="polite">
+	  <section aria-live="polite">
 		<ol data-draggable="target" role="listbox" aria-label="Historical Figure" class="col-lg-6" data-list="a">
 			<li role="listhead" class="listhead"><strong>Historical Figure</strong></li>
 			<br>
 		</ol>
-		</div>
+	  </section>
 	</div>
 
 	<div class="col-lg-12" id="container2">
-		<div aria-live="polite">
-		<ol data-draggable="target" role="listbox" aria-label="Historical Location" class="col-lg-6" data-list="b">
-			<li role="listhead" class="listhead"><strong>Historical Location</strong></li>
-			<br>
+		<section aria-live="polite">
+			<ol data-draggable="target" role="listbox" aria-label="Historical Location" class="col-lg-6" data-list="b">
+				<li role="listhead" class="listhead"><strong>Historical Location</strong></li>
+				<br>
+			</ol>
+		</section>
 
-		</ol>
-		</div>
+		<section aria-live="polite">
+			<ol data-draggable="target" role="listbox" aria-label="Not a real person or place" class="col-lg-6" data-list="c">
+				<li role="listhead" class="listhead"><strong>Not a real person or place..</strong></li>
+				<br>
 
-		<div aria-live="polite">
-		<ol data-draggable="target" role="listbox" aria-label="Not a real person or place" class="col-lg-6" data-list="c">
-			<li role="listhead" class="listhead"><strong>Not a real person or place..</strong></li>
-			<br>
-
-		</ol>
-		</div>
+			</ol>
+		</section>
 	</div>
-</div>
-	<div id="grading">
-		 <h2 id="gradeHeader"><strong>My Grade</strong></h2>
+  </main>
+	<div id="grading" role="status">
+		 <h2 id="gradeHeader" aria-labelledby="heading"><strong>My Grade</strong></h2>
 		 <br>
 		 <div id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
 		 </div>
