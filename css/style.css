@@ -205,3 +205,9 @@ body, html {
 	font-size: 30px;
 	list-style: none;
 }
+#download {
+	color: #fff;
+	background: #F05F40;
+	margin: 10px;
+	font-size: 1.5em;
+}
