@@ -96,15 +96,14 @@ h2 {
 	padding-top: 10px !important;
 	bottom: 0px !important;
 	left: 0px !important;
-    width: 100% !important;
-    position: fixed !important;
+  width: 100% !important;
+  position: fixed !important;
 	background: #fff;
 	color: black;
 	opacity: 0.7;
 }
 
 .previewDrop {
-	/*opacity: 0.9;*/
 	width: 85%;
 	height: 44px;
 	margin-bottom: 10px;
@@ -120,11 +119,7 @@ h2 {
 	margin-top: 30px;
 }
 
-#container1 {
-	padding-top: 50px;
-}
-
-#container2 {
+section {
 	min-height: 500px;
 	padding-top: 50px;
 }
@@ -137,14 +132,14 @@ h2 {
 }
 
 #keyboardInstruc {
-	padding: 50px;
+	padding: 0 50px 50px 50px;
 	background: white;
 	color: #000;
 	float: left;
 }
 
 #header {
-	padding: 30px;
+	padding: 50px;
 	font-weight: 300;
 	font-size: 4em;
 	background: white;
@@ -159,9 +154,11 @@ body, html {
 }
 
 #accessibleImg {
-	height: 720px;
-	width: 450px;
-	float: right;
+	max-height: 750px;
+	width: 80%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #instructions {
@@ -210,4 +207,9 @@ body, html {
 	background: #F05F40;
 	margin: 10px;
 	font-size: 1.5em;
+}
+
+#headerImage {
+	text-align: center;
+	padding-bottom: 50px;
 }

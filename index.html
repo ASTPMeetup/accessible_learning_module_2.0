@@ -16,10 +16,10 @@
 		<h1 id="header" aria-labelledby="heading">Accessibile Learning Module</h1>
 		<br>
 		<div>
-			<div class="col-lg-6">
+			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="headerImage">
 				<img src="img/accessible_computer.jpg" alt="accessible computer image" id="accessibleImg" role="presentation">
 			</div>
-			<section id="keyboardInstruc" class="container col-lg-6" role="listbox" alt="accessibility instructions">
+			<section id="keyboardInstruc" class="container col-xs-12 col-sm-12 col-md-6 col-lg-6" role="listbox" alt="accessibility instructions">
 				<h1 role="listhead">Key Board Instructions</h1>
 				<hr>
 				<li class="instructionsLi" role="listitem">Use <code>Tab</code> to move through the list of items below.</li>
@@ -34,11 +34,10 @@
 		</div>
 	</div>
 	<main id="app" role="main">
-	<div class="col-lg-12" id="container1">
-		<section aria-live="polite">
+		<section class="col-xs-12 col-sm-12 col-md-6 col-lg-6" aria-live="polite">
     <!--ADDED: role="listbox" aria-label="Place and People" -->
 
-		<ol data-draggable="target" role="listbox" aria-label="Places and People" class="col-lg-6" data-list="start">
+		<ol data-draggable="target" role="listbox" aria-label="Places and People" data-list="start">
 		      <!--ADDED: role="listhead" -->
 
 		  <li role="listhead" class="listhead"><strong>Places and People</strong></li>
@@ -48,35 +47,31 @@
 			<li data-draggable="item" role="listitem" data-category="c" data-description-id="1">Mount Place McPlace<span class="dropdown" aria-hidden="true">+</span></li>
 			<li data-draggable="item" role="listitem" data-category="a" data-description-id="2">Lord Byron<span class="dropdown" aria-hidden="true">+</span></li>
 			<li data-draggable="item" role="listitem" data-category="c" data-description-id="3">Joseph McJosephian<span class="dropdown" aria-hidden="true">+</span></li>
-		    <li data-draggable="item" role="listitem" data-category="a" data-description-id="4">Henry VIII of England<span class="dropdown" aria-hidden="true">+</span></li>
-		    <li data-draggable="item" role="listitem" data-category="a" data-description-id="5">Martin Luther King Jr<span class="dropdown" aria-hidden="true">+</span></li>
+		  <li data-draggable="item" role="listitem" data-category="a" data-description-id="4">Henry VIII of England<span class="dropdown" aria-hidden="true">+</span></li>
+		  <li data-draggable="item" role="listitem" data-category="a" data-description-id="5">Martin Luther King Jr<span class="dropdown" aria-hidden="true">+</span></li>
 		</ol>
 	  </section>
 
-	  <section aria-live="polite">
-		<ol data-draggable="target" role="listbox" aria-label="Historical Figure" class="col-lg-6" data-list="a">
+	  <section  class="col-xs-12 col-sm-12 col-md-6 col-lg-6" aria-live="polite">
+		<ol data-draggable="target" role="listbox" aria-label="Historical Figure" data-list="a">
 			<li role="listhead" class="listhead"><strong>Historical Figure</strong></li>
 			<br>
 		</ol>
 	  </section>
-	</div>
 
-	<div class="col-lg-12" id="container2">
-		<section aria-live="polite">
-			<ol data-draggable="target" role="listbox" aria-label="Historical Location" class="col-lg-6" data-list="b">
+		<section class="col-xs-12 col-sm-12 col-md-6 col-lg-6" aria-live="polite">
+			<ol data-draggable="target" role="listbox" aria-label="Historical Location" data-list="b">
 				<li role="listhead" class="listhead"><strong>Historical Location</strong></li>
 				<br>
 			</ol>
 		</section>
 
-		<section aria-live="polite">
-			<ol data-draggable="target" role="listbox" aria-label="Not a real person or place" class="col-lg-6" data-list="c">
+		<section class="col-xs-12 col-sm-12 col-md-6 col-lg-6" aria-live="polite">
+			<ol data-draggable="target" role="listbox" aria-label="Not a real person or place" data-list="c">
 				<li role="listhead" class="listhead"><strong>Not a real person or place..</strong></li>
 				<br>
-
 			</ol>
 		</section>
-	</div>
   </main>
 	<div id="grading" role="status">
 		 <h2 id="gradeHeader" aria-labelledby="heading"><strong>My Grade</strong></h2>
