@@ -212,3 +212,9 @@ body, html {
 	text-align: center;
 	padding-bottom: 50px;
 }
+
+@media (max-width: 990px) {
+	[data-draggable="item"] {
+		padding: 20px;
+	}
+}
