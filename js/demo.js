@@ -327,6 +327,8 @@
 			//Space is the selection or unselection keystroke
 			if(e.keyCode == 32)
 			{
+				var allPopUps = document.querySelector("#popup");
+				allPopUps.parentNode.removeChild(allPopUps);
 				//if the multiple selection modifier is pressed
 				if(hasModifier(e))
 				{

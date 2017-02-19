@@ -10,7 +10,7 @@ var objDescriptions = ['The only president to be a licensed bartender.',
                        '1700s English Poet who kept a pet bear in his college dorm room.',
                        'This man challenged George Washington to a breakdance competition.',
                        'He had servants called the “Grooms of Stool” whose job it was to wipe his bottom.',
-                       'He was a huge fan of Star Trek.'];
+                       'Coldest city on earth. Lowest recorded temperature a record -96 degrees Fahrenheit.'];
 
 $('#progressBar').progressbar({
 		value: grade,
