@@ -5,4 +5,4 @@ An ADA Section 508 compliant learning module demo for instructors who assist stu
 
 ## Instructions
 
-View the live demo on our [Amazon CloudFront site](https://d2j1h026cw6z0i.cloudfront.net "Drag & Drop Accessible Learning Module").
+View the live demo on our [Amazon CloudFront site](https://dlcc1h28kdoc1.cloudfront.net "Drag & Drop Accessible Learning Module").
