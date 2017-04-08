@@ -38,6 +38,7 @@ h2 {
 	box-shadow: none;
 	min-height: 250px;
 	opacity: 0.5;
+	margin-left: 5px;
 }
 
 /* draggable items */
@@ -134,19 +135,12 @@ section {
 
 #keyboardInstruc {
 	padding: 0 50px 50px 50px;
-	background: white;
-	color: #000;
-	float: left;
 }
 
 #header {
 	padding: 50px;
 	font-weight: 300;
 	font-size: 4em;
-	background: white;
-	top: 0;
-	left: 0;
-	margin: 0 auto;
 }
 
 body, html {
@@ -156,10 +150,7 @@ body, html {
 
 #accessibleImg {
 	max-height: 750px;
-	width: 80%;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+	width: 100%;
 }
 
 #instructions {
@@ -200,7 +191,7 @@ body, html {
   float: right;
   font-size: 20px;
 }
-.dropdown:hover {
+li:hover > span {
 	opacity: 1.0;
 	-webkit-transition-duration: 0.5s; /* Safari */
 	transition-duration: 0.5s;
@@ -208,6 +199,13 @@ body, html {
 .listhead {
 	font-size: 25px;
 	list-style: none;
+}
+.btn:hover{
+	transform: scale(1.05);
+	-webkit-transition: transform .5s; /* Safari */
+	transition: transform .5s;
+	transition-timing-function: linear;
+	-webkit-transition-timing-function: linear;
 }
 #download {
 	color: #fff;
@@ -217,7 +215,6 @@ body, html {
 }
 
 #headerImage {
-	text-align: center;
 	padding-bottom: 50px;
 }
 

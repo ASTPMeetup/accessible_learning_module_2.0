@@ -1,78 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Accessible Drag &#38; Drop</title>
-
-	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	<link rel="stylesheet" href="css/accessibility_bootstrap.css" type="text/css" />
+	
+	<link href="css/bundle.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Titillium+Web:200" rel="stylesheet">
-
 </head>
 <body>
-	<div class="col-lg-12" id="instructions">
-		<h1 id="header" aria-labelledby="heading">Accessibile Learning Module</h1>
-		<br>
-		<div>
+	<br>
+	<br>
+	<div class="col-xs-12 col-sm-12 col-md- 12 col-lg-12" id="instructions">
+		<div class="container">
+		<div class="row">
+			<br>
+			<h1 id="header" aria-labelledby="heading">Accessibile Learning Module</h1>
+			<br>
 			<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" id="headerImage">
-				<img src="img/accessible_computer.jpg" alt="accessible computer image" id="accessibleImg" role="presentation">
+				<img class="img-responsive" src="img/accessible_computer.jpg" alt="accessible computer image" id="accessibleImg" role="presentation">
 			</div>
-			<section id="keyboardInstruc" class="container col-xs-12 col-sm-12 col-md-6 col-lg-6" role="listbox" alt="accessibility instructions">
-				<h1 role="listhead">Key Board Instructions</h1>
-				<hr>
-				<li class="instructionsLi" role="listitem">Use <code>Tab</code> to move through the list of items below.</li>
-				<li class="instructionsLi" role="listitem">Select the item you want to move with the <code>Spacebar</code>.</li>
-				<li class="instructionsLi" role="listitem">Press <code>Shift + Spacebar</code> to select additional items.</li>
-				<li class="instructionsLi">Press <code>Enter</code> to drop the item on a target list.</li>
-				<li class="instructionsLi" role="listitem">Press <code>Esc</code> to unselect an item.</li>
-				<li class="instructionsLi" role="listitem">Use the <code>Down</code> &#38; <code>Up</code> keys to toggle popup.</li>
-				<br>
-				<a href="https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en" class="btn btn-default" id="download" target="_blank" role="presentation"  aria-hidden="true" alt="preview with chromevox download">Preview with ChromeVox</a>
+			<section id="keyboardInstruc" class="container col-xs-12 col-sm-12 col-md-6 col-lg-6" role="list" alt="accessibility instructions">
+					<h1 role="listhead">Key Board Instructions</h1>
+					<hr>
+					<li class="instructionsLi" role="listitem">Use <code>Tab</code> to move through the list of items below.</li>
+					<li class="instructionsLi" role="listitem">Select the item you want to move with the <code>Spacebar</code>.</li>
+					<li class="instructionsLi" role="listitem">Press <code>Shift + Spacebar</code> to select additional items.</li>
+					<li class="instructionsLi">Press <code>Enter</code> to drop the item on a target list.</li>
+					<li class="instructionsLi" role="listitem">Press <code>Esc</code> to unselect an item.</li>
+					<li class="instructionsLi" role="listitem">Use the <code>Down</code> &#38; <code>Up</code> keys to toggle popup.</li>
+					<br>
+					<a href="https://chrome.google.com/webstore/detail/chromevox/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en" class="btn btn-default" id="download" target="_blank" alt="preview with chromevox download">
+						Preview with ChromeVox
+					</a>
 			</section>
 		</div>
+		</div>
 	</div>
-	<main id="app" role="main">
-		<section class="col-xs-12 col-sm-12 col-md-6 col-lg-6" aria-live="polite">
-    <!--ADDED: role="listbox" aria-label="Place and People" -->
+	<main id="app">
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-		<ol data-draggable="target" role="listbox" aria-label="Places and People" data-list="start">
-		      <!--ADDED: role="listhead" -->
+			<section class="col-xs-12 col-sm-12 col-md-6 col-lg-6" aria-live="polite">
+	    <!--ADDED: role="listbox" aria-label="Place and People" -->
+				<ol data-draggable="target" role="listbox" aria-label="Places and People" data-list="start">
+				 <!--ADDED: role="listhead" -->
+				  <li role="listhead" class="listhead"><strong>Places and People</strong></li>
+					<br>
+				  <!--ADDED: role="listitem" -->
+					<li data-draggable="item" role="listitem" data-category="a" data-description-id="0">Abraham Lincoln<span class="dropdown" aria-hidden="true">&#187;</span></li>
+					<li data-draggable="item" role="listitem" data-category="c" data-description-id="1">Mount Place McPlace<span class="dropdown" aria-hidden="true">&#187;</span></li>
+					<li data-draggable="item" role="listitem" data-category="a" data-description-id="2">Lord Byron<span class="dropdown" aria-hidden="true">&#187;</span></li>
+					<li data-draggable="item" role="listitem" data-category="c" data-description-id="3">Joseph McJosephian<span class="dropdown" aria-hidden="true">&#187;</span></li>
+				  <li data-draggable="item" role="listitem" data-category="a" data-description-id="4">Henry VIII of England<span class="dropdown" aria-hidden="true">&#187;</span></li>
+				  <li data-draggable="item" role="listitem" data-category="b" data-description-id="5">Oymyakon<span class="dropdown" aria-hidden="true">&#187;</span></li>
+				</ol>
+		  </section>
 
-		  <li role="listhead" class="listhead"><strong>Places and People</strong></li>
-			<br>
-		      <!--ADDED: role="listitem" -->
-			<li data-draggable="item" role="listitem" data-category="a" data-description-id="0">Abraham Lincoln<span class="dropdown" aria-hidden="true">&#187;</span></li>
-			<li data-draggable="item" role="listitem" data-category="c" data-description-id="1">Mount Place McPlace<span class="dropdown" aria-hidden="true">&#187;</span></li>
-			<li data-draggable="item" role="listitem" data-category="a" data-description-id="2">Lord Byron<span class="dropdown" aria-hidden="true">&#187;</span></li>
-			<li data-draggable="item" role="listitem" data-category="c" data-description-id="3">Joseph McJosephian<span class="dropdown" aria-hidden="true">&#187;</span></li>
-		  <li data-draggable="item" role="listitem" data-category="a" data-description-id="4">Henry VIII of England<span class="dropdown" aria-hidden="true">&#187;</span></li>
-		  <li data-draggable="item" role="listitem" data-category="b" data-description-id="5">Oymyakon<span class="dropdown" aria-hidden="true">&#187;</span></li>
-		</ol>
-	  </section>
+		  <section  class="col-xs-12 col-sm-12 col-md-6 col-lg-6" aria-live="polite">
+				<ol data-draggable="target" role="listbox" aria-label="Historical Figure" data-list="a">
+					<li role="listhead" class="listhead"><strong>Historical Figure</strong></li>
+					<br>
+				</ol>
+		  </section>
+		</div>
 
-	  <section  class="col-xs-12 col-sm-12 col-md-6 col-lg-6" aria-live="polite">
-		<ol data-draggable="target" role="listbox" aria-label="Historical Figure" data-list="a">
-			<li role="listhead" class="listhead"><strong>Historical Figure</strong></li>
-			<br>
-		</ol>
-	  </section>
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<section class="col-xs-12 col-sm-12 col-md-6 col-lg-6" aria-live="polite">
+				<ol data-draggable="target" role="listbox" aria-label="Historical Location" data-list="b">
+					<li role="listhead" class="listhead"><strong>Historical Location</strong></li>
+					<br>
+				</ol>
+			</section>
 
-		<section class="col-xs-12 col-sm-12 col-md-6 col-lg-6" aria-live="polite">
-			<ol data-draggable="target" role="listbox" aria-label="Historical Location" data-list="b">
-				<li role="listhead" class="listhead"><strong>Historical Location</strong></li>
-				<br>
-			</ol>
-		</section>
+			<section class="col-xs-12 col-sm-12 col-md-6 col-lg-6" aria-live="polite">
+				<ol data-draggable="target" role="listbox" aria-label="Not a real person or place" data-list="c">
+					<li role="listhead" class="listhead"><strong>Not a real person or place..</strong></li>
+					<br>
+				</ol>
+			</section>
+		</div>
 
-		<section class="col-xs-12 col-sm-12 col-md-6 col-lg-6" aria-live="polite">
-			<ol data-draggable="target" role="listbox" aria-label="Not a real person or place" data-list="c">
-				<li role="listhead" class="listhead"><strong>Not a real person or place..</strong></li>
-				<br>
-			</ol>
-		</section>
   </main>
 	<div id="grading" role="status">
 		 <h2 id="gradeHeader" aria-labelledby="heading"><strong>My Grade</strong></h2>
@@ -83,12 +91,12 @@
 
 	<script src="js/jquery.min.js" type="text/javascript"></script>
 	<script src="js/jquery-ui.min.js" type="text/javascript"></script>
-	<script src="js/app.js" type="text/javascript"></script>
-	<script src="js/accessibility.js" type="text/javascript"></script>
+	<script src="js/app.bundle.js" type="text/javascript"></script>
+	<script src="js/accessibility.bundle.js" type="text/javascript"></script>
+
 	<script type="text/javascript">
 	// transfer javascript function from one js file to another
 		incrementProgress();
  	</script>
-
 </body>
 </html>
