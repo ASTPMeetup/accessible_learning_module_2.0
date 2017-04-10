@@ -24,12 +24,6 @@ h2 {
 	min-height: 250px;
 }
 
-/* drop target state */
-[data-draggable="target"][aria-dropeffect="move"]
-{
-	/*background:#fff;*/
-}
-
 /* drop target focus and dragover state */
 [data-draggable="target"][aria-dropeffect="move"]:focus,
 [data-draggable="target"][aria-dropeffect="move"].dragover
@@ -38,7 +32,8 @@ h2 {
 	box-shadow: none;
 	min-height: 250px;
 	opacity: 0.5;
-	font-size: smaller;
+	margin-left: 5px;
+	color: #6495ed;
 }
 
 /* draggable items */
@@ -46,7 +41,7 @@ h2 {
 {
 	width: 85%;
 	font-size: 1.1em;
-  font-weight: 700;
+    font-weight: 700;
 	margin-bottom: 10px;
 	text-align: center;
 	position: relative;
