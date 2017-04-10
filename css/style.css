@@ -38,7 +38,7 @@ h2 {
 	box-shadow: none;
 	min-height: 250px;
 	opacity: 0.5;
-	margin-left: 5px;
+	font-size: smaller;
 }
 
 /* draggable items */
@@ -89,17 +89,14 @@ h2 {
 	line-height: 28px !important;
 	border: none !important;
 	width: 92%;
-	transition: width 0.5s;
-	-webkit-transition: width 0.5s;
 }
 #grading {
-	display: none;
 	padding-left: 40px !important;
 	padding-top: 10px !important;
 	bottom: 0px !important;
 	left: 0px !important;
-  width: 100% !important;
-  position: fixed !important;
+    width: 100% !important;
+    position: fixed !important;
 	background: #fff;
 	color: black;
 	opacity: 0.7;

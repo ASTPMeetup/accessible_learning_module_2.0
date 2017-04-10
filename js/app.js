@@ -4,6 +4,8 @@ var placeholderValue = 5;
 var maxGrade = 100;
 var grade = 0;
 var dragCollection = $('[data-draggable="item"]');
+
+//styling and setup
 var totalDraggables = dragCollection.length;
 var objDescriptions = ['The only president to be a licensed bartender.',
                        'This place is super real and has some super interesting history.',
@@ -12,6 +14,15 @@ var objDescriptions = ['The only president to be a licensed bartender.',
                        'He had servants called the “Grooms of Stool” whose job it was to wipe his bottom.',
                        'Coldest city on earth. Lowest recorded temperature a record -96 degrees Fahrenheit.'];
 
+var colorCollection = ['#0099ff', '#e6005c', '#009933', '#f05f40', '#ac00e6', '#2eb8b8'];
+
+for (var i = 0; i < totalDraggables; i++) {
+  dragCollection[i].style.background = colorCollection[i];
+  dragCollection[i].setAttribute('aria-haspopup', 'true');
+}
+
+
+//handle grading
 $('#progressBar').progressbar({
 		value: grade,
 		max: maxGrade
@@ -55,6 +66,13 @@ function incrementProgress(){
 		.attr("aria-valuenow", grade).css({'padding-bottom': '20px'});
 }
 
+function checkForCompletion(grade) {
+  if (grade === maxGrade) {
+    $('[data-draggable="item"]').css({ "opacity" : "0.4" });
+  }
+}
+
+//handle popup menu
 $('[data-draggable="item"]').keydown(function(e){
   console.log($(this).text());
   if (e.keyCode == 40) {
@@ -67,15 +85,6 @@ $('[data-draggable="item"]').keydown(function(e){
 
 $('.dropdown').one("click", function(){
   initializePopup($(this).parent());
-});
-
-$(document).scroll(function() {
-  var y = $(this).scrollTop();
-  if (y > 825) {
-    $('#grading').fadeIn("slow");
-  } else {
-    $('#grading').fadeOut("show");
-  }
 });
 
 function initializePopup(dragObject) {
@@ -103,17 +112,4 @@ function removePopup(dragObject){
     $('#popup').remove();
     dragObject.children().one('click', function(){ initializePopup(dragObject); });
   }
-}
-
-var colorCollection = ['#0099ff', '#e6005c', '#009933', '#f05f40', '#ac00e6', '#2eb8b8'];
-
-for (var i = 0; i < totalDraggables; i++) {
-  dragCollection[i].style.background = colorCollection[i];
-  dragCollection[i].setAttribute('aria-haspopup', 'true');
-}
-
-function checkForCompletion(grade) {
-	if (grade === maxGrade) {
-		$('[data-draggable="item"]').css({ "opacity" : "0.4" });
-	}
 }
